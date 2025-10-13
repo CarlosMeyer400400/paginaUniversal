@@ -1,0 +1,60 @@
+<footer class="main-footer">
+  <div class="footer-grid">
+
+    <!-- Sección 1: Logo y contacto -->
+    <div class="footer-section brand-info">
+      <div class="logo-container">
+        <img [src]="logoUrl" alt="Logo de {{ nombre_empresa }}" class="footer-logo">
+      </div>
+
+      <p class="slogan">{{eslogan}}</p>
+      
+      <!-- Botón WhatsApp -->
+      <button (click)="openWhatsApp()" class="whatsapp-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="whatsapp-icon">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.5 14h-1V10h1v6zm3-5h-1V10h1v1zm3-1h-1V10h1v1z" fill="#FFF"></path>
+          <path d="M17 12c0-2.76-2.24-5-5-5s-5 2.24-5 5h1c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4H8v1h4.5c2.76 0 5-2.24 5-5z" fill="#075e54"></path>
+        </svg>
+        WhatsApp
+      </button>
+
+      <p class="phone-number">Teléfono: {{ telefono }}</p>
+    </div>
+
+    <!-- Sección 2: Enlaces -->
+    <div class="footer-section links">
+      <h3>Explora {{ nombre_empresa }}</h3>
+      <ul>
+        <li><a routerLink="/">Inicio</a></li>
+        <li><a routerLink="/acerca-de-nosotros">Acerca de nosotros</a></li>
+        <li><a routerLink="/productos-ventas-servicios">Productos</a></li>
+        <li><a routerLink="/redes-sociales">Redes sociales</a></li>
+      </ul>
+    </div>
+    
+    <!-- Sección 3: Redes sociales -->
+  <div class="footer-section social-location ">
+      <h3>Síguenos</h3>
+      <div class="social-links">
+        <a href="{{instagram}}" target="_blank" aria-label="Instagram" class="social-icon">
+          <!-- Icono de Instagram (SVG de ejemplo) -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="{{facebook}}" target="_blank" aria-label="Facebook XULA" class="social-icon">
+          <!-- Icono de Facebook (SVG de ejemplo) -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+       
+      </div>
+      
+      <h3 class="location-heading">Visítanos</h3>
+      <p>Dirección de la Sucursal</p>
+      <p>{{direccion}}</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {{ nombre_empresa }}. Todos los derechos reservados.</p>
+  </div>
+</footer>
