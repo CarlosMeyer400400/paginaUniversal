@@ -1,0 +1,48 @@
+.titulo h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.footer-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* separación entre íconos */
+  margin: 20px 0;
+}
+
+.social-icon {
+  font-size: 100px; /* tamaño grande del ícono */
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+.social-icon.instagram:hover {
+  color: #E1306C;
+}
+
+.social-icon.facebook:hover {
+  color: #1877F2;
+}
+
+.social-icon.whatsapp:hover {
+  color: #25D366;
+}
+
+.location-heading {
+  font-size: 1.5em;
+  margin-top: 20px;
+}

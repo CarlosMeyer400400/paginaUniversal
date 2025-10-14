@@ -1,3 +1,6 @@
+<section class="titulo">
+<h1>AGREGA TUS PRODUCTOS AL CARRITO</h1>
+</section>
 <!-- Contenedor de productos -->
 <div class="productos-container">
   <div
@@ -16,7 +19,7 @@
 </div>
 
 <!-- Paginación de productos -->
-<div class="paginacion">
+<div class="paginacion" style="text-align: center;">
   <button (click)="anteriorPagina()" [disabled]="paginaActual === 0">⬅️ Anterior</button>
 <span>Página {{ paginaActual + 1 }} de {{ getTotalPaginas() }}</span>
   <button (click)="siguientePagina()" [disabled]="(paginaActual + 1) * productosPorPagina >= productos.length">Siguiente ➡️</button>

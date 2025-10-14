@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { CsvService } from '../../../services/csv.service';
 
 @Component({
   selector: 'app-productos-ventas-servicios',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './productos-ventas-servicios.component.html',
   styleUrl: './productos-ventas-servicios.component.css'
 })

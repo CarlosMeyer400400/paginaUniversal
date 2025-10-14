@@ -1,1 +1,81 @@
 
+/* Base styles for the section */
+.acerca-de-nosotros {
+    text-align: center; /* Center the main title */
+    padding: 40px 20px; /* Add some padding around the section */
+    max-width: 1200px; /* Optional: Set a max-width for very large screens */
+    margin: 0 auto; /* Center the container */
+    font-family: 'Times New Roman', Times, serif; /* Use a classic font like in the image */
+}
+
+/* Main title styling (ACERCA DE NOSOTROS) */
+.acerca-de-nosotros h1 {
+    font-size: 3em; /* Large, prominent title */
+    margin-bottom: 20px;
+    letter-spacing: 2px; /* Slight spacing for an elegant look */
+    text-transform: uppercase;
+    font-weight: normal; /* Often serif fonts in headers look better with normal weight */
+}
+
+/* Styling for the overall content container */
+.info {
+    display: flex;
+    flex-direction: column; /* Default stack on smaller screens */
+    gap: 40px; /* Space between the stacked or side-by-side items */
+    margin-top: 40px;
+}
+
+/* Styling for the ¿Quiénes Somos? section */
+.info > h2:first-of-type {
+    /* Style for the ¿Quiénes Somos? title */
+    font-size: 2.5em; 
+    margin-bottom: 10px;
+    font-weight: normal; 
+}
+
+.info > p:first-of-type {
+    /* Style for the ¿Quiénes Somos? paragraph */
+    text-align: left; /* Keep the body text aligned left */
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Container for Vision and Mision to go side-by-side */
+.vision-mision-container {
+    display: flex;
+    flex-direction: column; /* Stack by default */
+    align-items: flex-start; /* Align content to the left */
+    text-align: left;
+    gap: 40px;
+}
+
+/* Helper classes to wrap Vision and Mision content */
+.vision-content, .mision-content {
+    flex: 1; /* Allows them to take up equal space when side-by-side */
+    padding: 0 10px; /* Small inner padding */
+}
+
+
+/* Styling for Vision and Mision titles */
+.vision-content h2, .mision-content h2 {
+    font-size: 3em; /* Large title like in the image */
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: center; /* Titles aligned to the left of their respective columns */
+}
+
+/* Styling for Vision and Mision paragraphs */
+.vision-content p, .mision-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Desktop / Tablet Layout (Side-by-Side) --- */
+@media (min-width: 768px) {
+    /* This breakpoint enables the side-by-side layout */
+    .vision-mision-container {
+        flex-direction: row; /* Change to row for side-by-side */
+    }
+}

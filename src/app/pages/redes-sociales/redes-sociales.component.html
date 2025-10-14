@@ -1,1 +1,27 @@
-<p>redes-sociales works!</p>
+<section class="titulo">
+  <h1>REDES SOCIALES</h1>
+</section>
+
+<div class="footer-section social-location">
+
+
+  <div class="social-links">
+    <!-- Instagram -->
+    <a href="{{ instagram }}" target="_blank" aria-label="Instagram" class="social-icon instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <!-- Facebook -->
+    <a href="{{ facebook }}" target="_blank" aria-label="Facebook" class="social-icon facebook">
+      <i class="fa-brands fa-facebook"></i>
+    </a>
+
+    <!-- WhatsApp -->
+    <a (click)="openWhatsApp()" aria-label="WhatsApp" class="social-icon whatsapp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <h3 class="location-heading">Visítanos</h3>
+  <p>{{ direccion }}</p>
+</div>
