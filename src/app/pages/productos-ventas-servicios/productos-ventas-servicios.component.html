@@ -1,1 +1,79 @@
-<p>productos-ventas-servicios works!</p>
+<!-- Contenedor de productos -->
+<div class="productos-container">
+  <div
+    class="producto-card"
+    *ngFor="let item of getProductosPagina()"
+    (click)="abrirDetalle(item)"
+  >
+    <img [src]="item.IMAGEN_URL" alt="{{ item.NOMBRE }}" class="producto-imagen" />
+    <h3 class="producto-nombre">{{ item.NOMBRE }}</h3>
+    <p class="producto-precio">${{ item.PRECIO }}</p>
+    <p class="producto-stock">Disponibles: {{ item.DISPONIBLES }}</p>
+    <button class="btn-carrito" (click)="agregarAlCarrito(item); $event.stopPropagation()">
+      🛒 Agregar al carrito
+    </button>
+  </div>
+</div>
+
+<!-- Paginación de productos -->
+<div class="paginacion">
+  <button (click)="anteriorPagina()" [disabled]="paginaActual === 0">⬅️ Anterior</button>
+<span>Página {{ paginaActual + 1 }} de {{ getTotalPaginas() }}</span>
+  <button (click)="siguientePagina()" [disabled]="(paginaActual + 1) * productosPorPagina >= productos.length">Siguiente ➡️</button>
+</div>
+
+
+<!-- Modal Detalle del producto -->
+<div class="modal" *ngIf="productoSeleccionado" (click)="cerrarDetalle()">
+  <div class="modal-contenido" (click)="$event.stopPropagation()">
+    <img
+      [src]="productoSeleccionado.IMAGEN_URL"
+      alt="{{ productoSeleccionado.NOMBRE }}"
+      class="modal-imagen"
+    />
+    <h2>{{ productoSeleccionado.NOMBRE }}</h2>
+    <p class="modal-precio">${{ productoSeleccionado.PRECIO }}</p>
+    <p class="modal-stock">Disponibles: {{ productoSeleccionado.DISPONIBLES }}</p>
+    <p class="modal-descripcion">{{ productoSeleccionado.DESCRIPCION }}</p>
+    <button class="btn-carrito" (click)="agregarAlCarrito(productoSeleccionado)">
+      🛒 Agregar al carrito
+    </button>
+    <button class="btn-cerrar" (click)="cerrarDetalle()">Cerrar ✖️</button>
+  </div>
+</div>
+
+<!-- Carrito flotante -->
+<div class="carrito-flotante" (click)="mostrarPanelCarrito = !mostrarPanelCarrito">
+  🛒
+<span class="contador" *ngIf="carrito.length > 0">{{ getCantidadTotal() }}</span>
+</div>
+
+<!-- Panel lateral del carrito -->
+<!-- Panel lateral del carrito -->
+<div class="panel-carrito" [class.abierto]="mostrarPanelCarrito">
+  <h3>🛍️ Tu carrito</h3>
+
+  <div *ngIf="carrito.length === 0" class="vacio">Tu carrito está vacío</div>
+
+  <div *ngFor="let producto of carrito" class="item-carrito">
+    <img [src]="producto.IMAGEN_URL" alt="{{ producto.NOMBRE }}" />
+    <div class="info-carrito">
+      <p class="nombre">{{ producto.NOMBRE }}</p>
+      <p class="precio">${{ producto.PRECIO }}</p>
+      <p class="cantidad">
+        <button (click)="disminuirCantidad(producto)">-</button>
+        {{ producto.cantidad }}
+        <button (click)="aumentarCantidad(producto)">+</button>
+      </p>
+    </div>
+    <button class="btn-borrar" (click)="eliminarProducto(producto)">🗑️</button>
+  </div>
+
+  <div class="total-compra" *ngIf="carrito.length > 0">
+    Total: ${{ getTotalCompra() }}
+  </div>
+
+  <button class="btn-whatsapp" *ngIf="carrito.length > 0" (click)="continuarCompra()">
+    📲 Continuar con la compra
+  </button>
+</div>
