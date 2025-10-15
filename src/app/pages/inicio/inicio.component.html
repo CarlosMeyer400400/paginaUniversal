@@ -1,1 +1,19 @@
-<p>inicio works!</p>
+<div class="home-container">
+    <div class="left-section">
+        <div class="logo-box">
+            <img src="{{logoUrl}}" alt="Logo" class="logo-img">
+        </div>
+        <h1 class="brand-name">{{nombreEmpresa}}</h1>
+        <p class="tagline">{{eslogan}}</p>
+    </div>
+
+    <div class="right-section">
+        <div class="menu-container">
+            <a class="menu-button" [routerLink]="['/']">INICIO</a>
+            <a class="menu-button" [routerLink]="['/acerca-de-nosotros']">ACERCA DE NOSOTROS</a>
+            <a class="menu-button" [routerLink]="['/productos-ventas-servicios']">PRODUCTOS</a>
+            <a class="menu-button" [routerLink]="['/redes-sociales']">REDES SOCIALES</a>
+        </div>
+    </div>
+</div>
+

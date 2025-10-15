@@ -1,0 +1,185 @@
+
+    /* RECUERDA: Si ves bordes blancos o scroll, pon esto en src/styles.css:
+    body, html { margin: 0; padding: 0; overflow-x: hidden; }
+    */
+
+    /* Aplicar box-sizing a todos los elementos para manejo seguro del padding */
+    .home-container *, .home-container *::before, .home-container *::after {
+        box-sizing: border-box;
+    }
+
+    /* --- Estilos Base (Desktop/General) --- */
+    .home-container {
+        background-color: #020E1A;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        border: none;
+        /* FIX CRÍTICO: Oculta el scroll horizontal */
+        overflow-x: hidden; 
+    }
+
+    /* Sección Izquierda */
+    .left-section {
+        padding: 40px;
+        width: 50%;
+        background-color: #020E1A;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        color: #8b5e3c;
+    }
+
+   
+    
+    /* NUEVO ESTILO: Para la imagen del logo */
+    .logo-img {
+        max-width: 300px; 
+        height: auto;
+        display: block; 
+    }
+
+    .brand-name {
+        color: #fff;
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .tagline {
+        color: #fff;
+        font-size: 20px;
+        text-align: center;
+        line-height: 1.6;
+        /* Ajuste de seguridad */
+        max-width: 90%; 
+        font-style: italic;
+    }
+
+    /* Sección Derecha */
+    .right-section {
+        height: 100%;
+        padding: 50px;
+        width: 50%;
+        background-color: #020E1A;
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .menu-container {
+        margin-top: 40px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu-button {
+        box-sizing: border-box; 
+        display: block;
+        padding: 15px 40px;
+        margin: 10px auto;
+        color: #020E1A;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 20px;
+        font-weight: bold;
+        width: 350px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-button:nth-child(odd) {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .menu-button:nth-child(even) {
+        background-color: rgba(245, 245, 245, 0.9);
+    }
+
+    /* --- Media Queries para Responsividad --- */
+
+    /* Para tabletas y móviles grandes (hasta 768px de ancho) */
+    @media (max-width: 768px) {
+        .home-container {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .left-section, .right-section {
+            width: 100%;
+            padding: 30px;
+        }
+
+        .right-section {
+            min-height: 250px;
+        }
+
+      
+
+        .logo-img {
+            max-width: 120px; 
+        }
+        
+        .brand-name {
+            font-size: 36px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            max-width: 90%;
+        }
+
+        .menu-container {
+            margin-top: 20px;
+        }
+
+        .menu-button {
+            font-size: 18px;
+            padding: 12px 30px;
+            width: 90%; 
+            max-width: 350px;
+            margin: 8px auto;
+        }
+    }
+
+    /* Para móviles pequeños (hasta 480px de ancho) */
+    @media (max-width: 480px) {
+        /* FIX DE ESPACIOS Y CENTRADO */
+        .left-section, .right-section {
+            /* FIX CRÍTICO: Padding muy reducido para evitar desbordes */
+            padding: 20px 10px; 
+            align-items: center; 
+        }
+
+      
+        
+        .logo-img {
+            max-width: 100px; 
+        }
+
+        .brand-name {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            max-width: 95%; 
+        }
+        
+        /* Ajuste de Botones */
+        .menu-button {
+            font-size: 15px; 
+            padding: 10px 10px; 
+            width: 100%; 
+            margin: 5px auto;
+        }
+    }
