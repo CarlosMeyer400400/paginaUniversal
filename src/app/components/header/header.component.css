@@ -25,6 +25,7 @@
 
 /* --- NAVEGACIÓN --- */
 .main-nav {
+  color: #fff;
   display: flex;
   gap: 20px;
   align-items: center;
