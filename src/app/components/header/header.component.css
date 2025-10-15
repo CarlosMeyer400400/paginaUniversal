@@ -33,7 +33,7 @@
 
 .menu-button {
   text-decoration: none;
-  color: #000000;
+  color: #fff;
   font-weight: 500;
   padding: 8px 12px;
   transition: color 0.3s, background-color 0.3s;
